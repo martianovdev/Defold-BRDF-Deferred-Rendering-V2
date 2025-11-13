@@ -1,0 +1,25 @@
+
+function init(self)
+	self.window_w = 0
+	self.window_h = 0
+
+	self.element_object = msg.url("/RenderRoot/go")
+	self.element_sprite = msg.url("/RenderRoot/go#sprite")
+	
+
+end
+
+function update(self, dt)
+	local window_w, window_h = window.get_size()
+	if(window_w ~= self.window_w or window_h ~= self.window_h ) then
+		self.window_w = window_w
+		self.window_h = window_h
+		
+		go.set_position(vmath.vector3(window_w/2, window_h/2, 0), self.element_object)
+		go.set(self.element_sprite, "size", vmath.vector3(window_w, window_h, 0))
+		go.set(self.element_sprite, "surface_size", vmath.vector4(window_w, window_h, 0, 0))
+		go.set(self.element_sprite, "tint", vmath.vector4(1.0, 1.0, 1.0, 1.0))
+		
+		msg.post("@render:", "set_render_size", {width = window_w, height = window_h})
+	end
+end

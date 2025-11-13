@@ -1,0 +1,5 @@
+images {
+  image: "/src/Modules/Render/Backend/Textures/RenderRoot.png"
+}
+margin: 20
+extrude_borders: 40

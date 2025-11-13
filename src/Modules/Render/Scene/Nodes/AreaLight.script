@@ -1,0 +1,17 @@
+go.property("color", vmath.vector4(1, 1, 1, 1))
+go.property("intensity", 20.0)
+go.property("radius", 8)
+go.property("volume_radius", 8)
+go.property("shadows", false)
+
+function init(self)
+	msg.post("@render:", "create_light", { 
+		type = "area",
+		transform = go.get_world_transform(),
+		color = self.color, 
+		intensity = self.intensity,
+		radius = self.radius,
+		volume_radius = self.volume_radius,
+		shadows = self.shadows
+	})
+end

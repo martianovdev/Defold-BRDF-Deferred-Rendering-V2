@@ -1,0 +1,38 @@
+#version 140
+
+// =====================================================================================
+// SSAO Vertex Shader
+// Full-screen quad vertex shader for screen-space ambient occlusion pass.
+//
+// Author: Mikhail Martianov | martianov.tech
+// =====================================================================================
+
+uniform vx_uniforms
+{
+    mat4 mtx_view_proj;
+};
+
+uniform camera_mvp_uniforms
+{
+    mat4 mtx_camera_mvp;
+};
+
+// positions are in world space
+in vec3 position;
+in vec2 texcoord0;
+in vec3 local_position;
+in vec4 color;
+
+out vec2 var_texcoord0;
+out vec3 u_local_position;
+out mat4 var_camera_matrix;
+
+void main()
+{
+    var_texcoord0 = texcoord0;
+    u_local_position = local_position;
+
+    var_camera_matrix = mtx_camera_mvp;
+
+    gl_Position = mtx_view_proj * vec4(position.xyz, 1.0);
+}

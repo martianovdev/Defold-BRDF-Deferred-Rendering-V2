@@ -1,0 +1,62 @@
+#version 140
+
+// =====================================================================================
+// Forward Model Vertex Shader
+// Transforms vertices and computes TBN basis for forward rendering with normal mapping.
+// Outputs world-space position, normal, tangent, and bitangent vectors.
+//
+// Author: Mikhail Martianov | martianov.tech
+// =====================================================================================
+
+uniform sampler2D tileLightMap;
+
+in vec4 position;
+in vec2 texcoord0;
+in vec3 normal;
+in vec4 tangent;
+
+uniform mtx_uniforms
+{
+    uniform mat4 mtx_worldview;
+    uniform mat4 mtx_world;
+    uniform mat4 mtx_view;
+    uniform mat4 mtx_proj;
+    uniform mat4 mtx_normal;
+};
+
+
+out vec4 var_position;
+out vec3 var_normal;
+out vec2 var_texcoord0;
+
+out vec3 vWorldPos;
+out vec3 vWorldNormal;
+out vec3 vT;
+out vec3 vB;
+
+
+void main()
+{
+    var_texcoord0 = texcoord0;
+
+    // Apply world and view matrices to vertex position
+    vec4 p = mtx_worldview * vec4(position.xyz, 1.0); 
+    vec4 p_w = mtx_world * vec4(position.xyz, 1.0);
+
+    //var_normal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
+    var_normal = normalize((mtx_world * vec4(normal, 0.0)).xyz);
+    var_position = p; 
+
+
+    vWorldPos    = p_w.xyz;
+    vec3 N       = normalize(var_normal);
+    vec3 T       = normalize(tangent.xyz);
+    vec3 B       = normalize(cross(N, T)) * tangent.w;
+
+    vWorldNormal = N;
+    vT = T;
+    vB = B;
+
+    gl_Position = mtx_proj * p;
+}
+

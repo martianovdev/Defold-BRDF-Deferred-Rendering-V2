@@ -1,0 +1,26 @@
+name: "main"
+collection_instances {
+  id: "RenderRoot"
+  collection: "/src/Modules/Render/Backend/Nodes/RenderRoot.collection"
+}
+scale_along_z: 0
+embedded_instances {
+  id: "Main"
+  children: "proxy"
+  data: "components {\n"
+  "  id: \"Script\"\n"
+  "  component: \"/src/Main.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "proxy"
+  data: "embedded_components {\n"
+  "  id: \"scene_collectionproxy\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/src/Content/Rooms/Scene.collection\\\"\\n"
+  "exclude: true\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

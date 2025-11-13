@@ -1,0 +1,264 @@
+local Core = require("src.Modules.Core.Core")
+local Math3D = require("src.Modules.Math3D")
+
+local vectors = {
+	zero = vmath.vector3(0, 0, 0),
+	up = vmath.vector3(0, 1, 0),
+}
+
+local EPS = 1e-6
+
+local function clamp_length(v, max_len)
+	local len = vmath.length(v)
+	if len <= max_len or len < 1e-8 then return v end
+	return v * (max_len / len)
+end
+
+local function contact_point_event(self, data, other)
+	local normal = -vmath.normalize(other.normal or vectors.up)
+	local distance = data and data.distance or 0
+	if not distance or distance <= 0 then
+		return
+	end
+
+	-- account for already accumulated correction for this fixed frame
+	local proj = vmath.project(self.position_correction or vectors.zero, normal * distance)
+
+	if proj < 1 - EPS then
+		local comp = (distance - distance * proj) * normal
+
+		-- accumulate world correction (for next contact_point in the same frame)
+		self.position_correction = (self.position_correction or vectors.zero) + comp
+
+		-- apply to physics body in local space
+		self.body_position = self.body_position + vmath.rotate(vmath.conj(self.rotation), comp)
+		go.set_position(self.body_position, self.body)
+	end
+end
+
+function init(self)
+	msg.post(".", "init")
+end
+
+function fixed_update(self, dt)
+	physics.wakeup(self.body_collision_comp)
+
+	-- current rotation needed here: calculate movement in fixed_update
+	self.rotation = go.get_rotation(self.player_obj)
+
+	-- start of physics step
+	self.grounded = false
+	self.position_correction = self.position_correction or vectors.zero
+
+	-- === FPS movement with acceleration ===
+	-- WASD input in player local space: X left/right, Z forward/backward
+	local input_local = vmath.vector3(
+		(self.target_move_vector.x or 0),
+		0,
+		-(self.target_move_vector.z or 0)
+	)
+	local input_len = vmath.length(input_local)
+
+	-- calculate target horizontal velocity
+	local target_vel_world = vectors.zero
+	if input_len > 1e-6 then
+		-- normalize so diagonal speed doesn't increase
+		input_local = input_local / input_len
+		local move_dir_world = vmath.rotate(self.rotation, input_local) -- forward along player yaw
+		local target_speed = self.is_running and self.run_speed or self.walk_speed
+		target_vel_world = move_dir_world * target_speed
+	end
+
+	-- current horizontal velocity self.velocity (in world space)
+	local desired_change = target_vel_world - self.velocity
+	if input_len > 1e-6 then
+		-- accelerate towards target velocity
+		local max_delta = self.accel * dt
+		desired_change = clamp_length(desired_change, max_delta)
+		self.velocity = self.velocity + desired_change
+	else
+		-- braking to zero
+		local max_delta = self.decel * dt
+		if vmath.length(desired_change) > 0 then
+			-- desired_change here is negative relative to velocity vector
+			desired_change = clamp_length(desired_change, max_delta)
+			self.velocity = self.velocity + desired_change
+			-- prevent jitter
+			if vmath.length(self.velocity) < 1e-4 then
+				self.velocity = vectors.zero
+			end
+		end
+	end
+
+	-- apply displacement (XZ only)
+	local displacement_world = self.velocity * dt
+	displacement_world.y = 0
+
+	if vmath.length(displacement_world) > 0 then
+		-- physics body needs displacement in body local space
+		self.body_position = self.body_position + vmath.rotate(vmath.conj(self.rotation), displacement_world)
+	end
+
+	-- apply accumulated local body displacement so physics generates contact points
+	if self.body_position ~= vectors.zero then
+		go.set_position(self.body_position, self.body)
+	end
+
+	-- simple vertical physics (left as is)
+	if self.grounded then
+		if self.vertical_vel < 0 then
+			self.vertical_vel = 0
+		end
+	else
+		self.vertical_vel = self.vertical_vel + self.gravity * dt
+		if self.vertical_vel < self.terminal_velocity then
+			self.vertical_vel = self.terminal_velocity
+		end
+	end
+
+	-- end of physics step
+	self.position_correction = vectors.zero
+end
+
+function update(self, dt)
+	-- transfer accumulated local body displacement to world and reset local
+	if self.body_position ~= vectors.zero then
+		self.position = self.position + vmath.rotate(self.rotation, self.body_position)
+		self.body_position = vectors.zero
+		go.set_position(self.body_position, self.body)
+	end
+
+	-- ==== Mouse: smoothing and applying rotations ====
+	self.current_rotation = vmath.lerp(dt * self.rotation_smoothness, self.current_rotation, self.target_rotation)
+
+	-- 1) Yaw: dx → player rotation around global Y axis
+	if math.abs(self.current_rotation.y) > 0.0001 then
+		Math3D.rotate(self.player_obj, 0, self.current_rotation.y, 0, false)
+	end
+
+	-- 2) Pitch: dy → local camera rotation around X with clamping
+	if math.abs(self.current_rotation.x) > 0.0001 then
+		local desired_pitch = self.pitch + self.current_rotation.x
+		if desired_pitch > self.pitch_max then desired_pitch = self.pitch_max end
+		if desired_pitch < self.pitch_min then desired_pitch = self.pitch_min end
+
+		local delta_pitch = desired_pitch - self.pitch
+		if math.abs(delta_pitch) > 0.0001 then
+			Math3D.rotate(self.camera_obj, delta_pitch, 0, 0, true)
+			self.pitch = desired_pitch
+		end
+	end
+
+	-- reset target to accumulate new deltas next frame
+	self.target_rotation.x = 0
+	self.target_rotation.y = 0
+
+	-- ==== Smooth visual object following body ====
+	-- self.position — target world position calculated from physics
+	-- self.render_position — smoothed position of visual object (player_obj)
+	self.render_position = vmath.lerp(dt * self.follow_smoothness, self.render_position, self.position)
+	go.set_position(self.render_position, self.player_obj)
+
+
+	-- === Hands follow ===
+
+	-- hands position in world = player position in world
+	local player_wp = go.get_world_position(self.camera_obj)
+	go.set_position(player_wp, self.hands)
+	-- target rotation taken from camera (in world space)
+	local target_wr = go.get_world_rotation(self.camera_obj)
+
+	-- smooth current world rotation of hands towards it
+	local alpha = dt * self.hands_rot_smoothness
+	if alpha > 1 then alpha = 1 end
+
+	self.hands_rot_current = vmath.slerp(alpha, self.hands_rot_current, target_wr)
+	go.set_rotation(self.hands_rot_current, self.hands)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("init") then
+		msg.post("@system:", "toggle_physics_debug")
+		msg.post(".", "acquire_input_focus")
+
+		self.player_obj = msg.url()         -- visual object (parent)
+		self.camera_obj = msg.url("Camera") -- camera (child/sibling object)
+		self.hands = msg.url("hands")
+
+		self.body = msg.url("body")         -- collision object (child)
+		self.body_collision_comp = msg.url("body#collisionobject")
+
+		-- initial transforms
+		self.position = go.get_position(self.player_obj)
+		self.render_position = self.position -- start for smooth following
+		self.rotation = go.get_rotation(self.player_obj)
+
+		-- local position of body relative to player_obj
+		self.body_position = go.get_position(self.body)
+
+		-- movement: basic parameters
+		self.walk_speed = 1.4                    -- walk speed
+		self.run_speed  = 2.4                    -- run speed
+		self.accel      = 20                   -- acceleration to target (units/s^2)
+		self.decel      = 25                   -- deceleration to zero (units/s^2)
+		self.follow_smoothness = 15            -- smoothness of visual object following body (higher = faster)
+
+
+		self.velocity = vmath.vector3()        -- current horizontal velocity in WORLD space
+		self.target_move_vector = vmath.vector3()
+		self.is_running = false
+
+		-- vertical physics (as before)
+		self.gravity = -2
+		self.terminal_velocity = -1
+		self.vertical_vel = 0
+
+		self.position_correction = vectors.zero
+		self.grounded = false
+
+		-- mouse/rotations
+		self.mouse_sensitivity = 0.5
+		self.rotation_smoothness = 30
+		self.target_rotation = vmath.vector3()
+		self.current_rotation = vmath.vector3()
+		self.pitch = 0
+		self.pitch_min = -65
+		self.pitch_max = 65
+
+		-- === Hands follow ===
+		self.hands_rot_smoothness = 30   -- (higher = faster)
+		self.hands_rot_current   = go.get_world_rotation(self.hands)
+
+
+		Core:subscribe_on_physics_events(self.body, function(data, other)
+			contact_point_event(self, data, other)
+		end)
+	end
+end
+
+function on_input(self, action_id, action)
+	-- WASD
+	if action_id == hash("forward") then
+		self.target_move_vector.z = action.pressed and 1 or (action.released and 0 or self.target_move_vector.z)
+	elseif action_id == hash("backward") then
+		self.target_move_vector.z = action.pressed and -1 or (action.released and 0 or self.target_move_vector.z)
+	elseif action_id == hash("left") then
+		self.target_move_vector.x = action.pressed and -1 or (action.released and 0 or self.target_move_vector.x)
+	elseif action_id == hash("right") then
+		self.target_move_vector.x = action.pressed and 1 or (action.released and 0 or self.target_move_vector.x)
+	elseif action_id == hash("sprint") then
+		-- hold Shift to run
+		if action.pressed then self.is_running = true end
+		if action.released then self.is_running = false end
+	end
+
+	-- Mouse: dx → player yaw (global Y), dy → camera pitch (local X)
+	if action.dx or action.dy then
+		if action.dx then
+			self.target_rotation.y = -(action.dx) * self.mouse_sensitivity
+		end
+		if action.dy then
+			self.target_rotation.x = (action.dy) * self.mouse_sensitivity
+		end
+	end
+end

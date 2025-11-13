@@ -1,0 +1,24 @@
+key_trigger {
+  input: KEY_W
+  action: "forward"
+}
+key_trigger {
+  input: KEY_A
+  action: "left"
+}
+key_trigger {
+  input: KEY_S
+  action: "backward"
+}
+key_trigger {
+  input: KEY_D
+  action: "right"
+}
+key_trigger {
+  input: KEY_LSHIFT
+  action: "sprint"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_LEFT
+  action: "mouse_button_left"
+}

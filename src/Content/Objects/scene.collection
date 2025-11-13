@@ -1,0 +1,3767 @@
+name: "scene"
+instances {
+  id: "seg_ceil_01.001"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: 0.0
+    y: 2.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.002"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: 0.0
+    y: 2.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.003"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: 0.0
+    y: 2.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.004"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: 0.0
+    y: 2.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.005"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -2.0
+    y: 2.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.006"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -4.0
+    y: 2.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.007"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -6.0
+    y: 2.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.008"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -6.0
+    y: 2.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.009"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -6.0
+    y: 2.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.010"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -6.0
+    y: 2.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.011"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -4.0
+    y: 2.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.012"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -2.0
+    y: 2.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.013"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -4.0
+    y: 2.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.014"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -2.0
+    y: 2.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.015"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -2.0
+    y: 2.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.016"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -4.0
+    y: 2.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.017"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -2.0
+    y: 2.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.018"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -4.0
+    y: 2.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.019"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -6.0
+    y: 2.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.020"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -8.0
+    y: 2.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.021"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: 0.0
+    y: 2.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.022"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -8.0
+    y: 2.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.023"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -8.0
+    y: 2.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.024"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -8.0
+    y: 2.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.025"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -6.0
+    y: 2.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.026"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -4.0
+    y: 2.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.027"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -8.0
+    y: 2.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_ceil_01.028"
+  prototype: "/src/Objects/seg_ceil_01.go"
+  position {
+    x: -8.0
+    y: 2.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_floor_01.001"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.002"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.003"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.004"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.005"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.006"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.007"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.008"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.009"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.010"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.011"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.012"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.013"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.014"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.015"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.016"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.017"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.018"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.019"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.020"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.021"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.022"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.023"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.024"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.025"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.026"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.027"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_floor_01.028"
+  prototype: "/src/Objects/seg_floor_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_wall_01.001"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: 1.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.002"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -1.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.003"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.004"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.005"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: -0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.006"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: 1.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.007"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: 1.0
+    y: 0.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.008"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: 1.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.009"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: 0.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.010"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -5.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.011"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.012"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -1.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.013"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: -0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.014"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: 2.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: -0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.015"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: -0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.016"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.017"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: -0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.018"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -2.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.019"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.020"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -7.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.021"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: 4.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.022"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -9.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.023"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: 4.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.024"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 4.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.025"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: 1.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.026"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: 2.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.027"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 2.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.028"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -5.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.029"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: -0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.030"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: -0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.031"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.032"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.033"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.034"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -7.6
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.035"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -4.9
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.036"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -4.9
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.037"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: 6.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.038"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: -4.9
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.039"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: -4.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.041"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: -4.9
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.042"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: 6.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.043"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 6.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.044"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -9.0
+    y: 0.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.045"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -3.0
+    y: 0.0
+    z: 5.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.046"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -9.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.047"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -7.0
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.048"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: 4.5
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.049"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -8.0
+    y: 0.0
+    z: 0.5
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.051"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: -5.3
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01.052"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -9.4
+    y: 0.0
+    z: 3.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01.053"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: 6.9
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01.054"
+  prototype: "/src/Objects/seg_wall_01.go"
+  position {
+    x: -2.0
+    y: 0.0
+    z: -5.3
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01_corner.001"
+  prototype: "/src/Objects/seg_wall_01_corner.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: 2.5
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01_corner.002"
+  prototype: "/src/Objects/seg_wall_01_corner.go"
+  position {
+    x: -5.0
+    y: 0.0
+    z: 2.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01_corner.003"
+  prototype: "/src/Objects/seg_wall_01_corner.go"
+  position {
+    x: -5.0
+    y: 0.0
+    z: -1.5
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01_corner.004"
+  prototype: "/src/Objects/seg_wall_01_corner.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01_corner.005"
+  prototype: "/src/Objects/seg_wall_01_corner.go"
+  position {
+    x: -7.0
+    y: 0.0
+    z: 0.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01_corner.006"
+  prototype: "/src/Objects/seg_wall_01_corner.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: -1.5
+  }
+  rotation {
+    x: 0.5
+    y: -0.5
+    z: 0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01_corner.007"
+  prototype: "/src/Objects/seg_wall_01_corner.go"
+  position {
+    x: -7.0
+    y: 0.0
+    z: 4.5
+  }
+  rotation {
+    x: 0.5
+    y: 0.5
+    z: -0.5
+    w: 0.5
+  }
+}
+instances {
+  id: "seg_wall_01_door.001"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_wall_01_door.002"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -5.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01_door.003"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -5.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_wall_01_door.004"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -1.0
+    y: 0.0
+    z: -0.5
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01_door.005"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -7.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "seg_wall_01_door.006"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01_door.007"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -6.0
+    y: 0.0
+    z: -3.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01_door.008"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 4.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "seg_wall_01_door.009"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -7.0
+    y: 0.0
+    z: 1.5
+  }
+  rotation {
+    x: 0.0
+    y: 1.0
+    z: 0.0
+    w: 0.0
+  }
+}
+instances {
+  id: "seg_wall_01_door.010"
+  prototype: "/src/Objects/seg_wall_01_door.go"
+  position {
+    x: -4.0
+    y: 0.0
+    z: 4.5
+  }
+  rotation {
+    x: 0.0
+    y: -0.707107
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.001"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.941914
+    y: 1.0
+    z: -1.66375
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.002"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.941914
+    y: 1.0
+    z: -3.343272
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.003"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.941914
+    y: 1.0
+    z: -3.219496
+  }
+  rotation {
+    x: -0.999997
+    y: 0.0
+    z: 0.0
+    w: 0.00253
+  }
+}
+instances {
+  id: "wood_board.004"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.941914
+    y: 1.0
+    z: -3.085969
+  }
+  rotation {
+    x: -0.00546
+    y: 0.0
+    z: 0.0
+    w: 0.999985
+  }
+}
+instances {
+  id: "wood_board.005"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.941914
+    y: 1.0
+    z: -1.7953
+  }
+  rotation {
+    x: 0.999972
+    y: 0.0
+    z: 0.0
+    w: 0.007495
+  }
+}
+instances {
+  id: "wood_board.006"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.941914
+    y: 1.0
+    z: -1.924588
+  }
+  rotation {
+    x: -0.000147
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.007"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.842722
+    y: 1.0
+    z: -1.66375
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.008"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.842722
+    y: 1.0
+    z: -1.7953
+  }
+  rotation {
+    x: 0.999972
+    y: 0.0
+    z: 0.0
+    w: 0.007495
+  }
+}
+instances {
+  id: "wood_board.009"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.842722
+    y: 1.0
+    z: -1.924588
+  }
+  rotation {
+    x: -0.000147
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.010"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.846423
+    y: 1.0
+    z: -3.343272
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.011"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.846423
+    y: 1.0
+    z: -3.219496
+  }
+  rotation {
+    x: -0.999997
+    y: 0.0
+    z: 0.0
+    w: 0.00253
+  }
+}
+instances {
+  id: "wood_board.012"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.846423
+    y: 1.0
+    z: -3.085969
+  }
+  rotation {
+    x: -0.00546
+    y: 0.0
+    z: 0.0
+    w: 0.999985
+  }
+}
+instances {
+  id: "wood_board.013"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.909946
+    y: 1.930122
+    z: -2.498308
+  }
+  rotation {
+    x: -0.710957
+    y: 0.0
+    z: 0.0
+    w: 0.703235
+  }
+}
+instances {
+  id: "wood_board.014"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.874722
+    y: 1.85993
+    z: -2.498308
+  }
+  rotation {
+    x: 0.735813
+    y: 0.0
+    z: 0.0
+    w: 0.677185
+  }
+}
+instances {
+  id: "wood_board.015"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -5.1547
+    y: 1.031633
+    z: -1.30196
+  }
+  rotation {
+    x: 0.998469
+    y: -0.054517
+    z: 0.007851
+    w: 0.005007
+  }
+}
+instances {
+  id: "wood_board.016"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -5.211043
+    y: 1.025138
+    z: -1.43002
+  }
+  rotation {
+    x: 0.99572
+    y: -0.091954
+    z: 0.008033
+    w: 0.004709
+  }
+}
+instances {
+  id: "wood_board.017"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.874722
+    y: 1.501542
+    z: -1.802854
+  }
+  rotation {
+    x: 0.691435
+    y: 0.0
+    z: 0.0
+    w: 0.722439
+  }
+}
+instances {
+  id: "wood_board.018"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.912822
+    y: 1.503303
+    z: -1.823631
+  }
+  rotation {
+    x: 0.649624
+    y: 0.0
+    z: 0.0
+    w: 0.760256
+  }
+}
+instances {
+  id: "wood_board.019"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.874722
+    y: 1.473676
+    z: -3.177483
+  }
+  rotation {
+    x: 0.80966
+    y: 0.0
+    z: 0.0
+    w: 0.586899
+  }
+}
+instances {
+  id: "wood_board.020"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.912822
+    y: 1.475437
+    z: -3.198261
+  }
+  rotation {
+    x: 0.649624
+    y: 0.0
+    z: 0.0
+    w: 0.760256
+  }
+}
+instances {
+  id: "wood_board.021"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.909946
+    y: 1.631405
+    z: -2.498308
+  }
+  rotation {
+    x: -0.710957
+    y: 0.0
+    z: 0.0
+    w: 0.703235
+  }
+}
+instances {
+  id: "wood_board.022"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -5.096139
+    y: 0.013991
+    z: -3.072542
+  }
+  rotation {
+    x: -0.529101
+    y: 0.529101
+    z: -0.469097
+    w: 0.469097
+  }
+}
+instances {
+  id: "wood_board.023"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -5.294097
+    y: 0.013991
+    z: -3.126238
+  }
+  rotation {
+    x: -0.599002
+    y: 0.599002
+    z: -0.375762
+    w: 0.375762
+  }
+}
+instances {
+  id: "wood_board.024"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -5.1873
+    y: 0.046159
+    z: -3.20781
+  }
+  rotation {
+    x: -0.662265
+    y: 0.662265
+    z: -0.2478
+    w: 0.2478
+  }
+}
+instances {
+  id: "wood_board.025"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -5.345004
+    y: 0.053407
+    z: -3.244558
+  }
+  rotation {
+    x: -0.743977
+    y: 0.630972
+    z: -0.08834
+    w: 0.201416
+  }
+}
+instances {
+  id: "wood_board.026"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.81298
+    y: 0.04937
+    z: -3.177483
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.027"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.974369
+    y: 0.04937
+    z: -3.203454
+  }
+  rotation {
+    x: 0.004115
+    y: -0.707095
+    z: -0.707095
+    w: 0.004115
+  }
+}
+instances {
+  id: "wood_board.028"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.910276
+    y: 0.04937
+    z: -3.177483
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.029"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.876532
+    y: 0.04937
+    z: -3.162894
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "wood_board.030"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.874722
+    y: 0.417575
+    z: -3.177483
+  }
+  rotation {
+    x: 0.630574
+    y: 0.0
+    z: 0.0
+    w: 0.776129
+  }
+}
+instances {
+  id: "wood_board.031"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.908706
+    y: 0.417575
+    z: -3.177483
+  }
+  rotation {
+    x: -0.689245
+    y: 0.0
+    z: 0.0
+    w: 0.724528
+  }
+}
+instances {
+  id: "wood_board.032"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.81298
+    y: 0.04937
+    z: -1.811319
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.033"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.974369
+    y: 0.04937
+    z: -1.805459
+  }
+  rotation {
+    x: 0.004115
+    y: -0.707095
+    z: -0.707095
+    w: 0.004115
+  }
+}
+instances {
+  id: "wood_board.034"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.910276
+    y: 0.04937
+    z: -1.811319
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.035"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.876532
+    y: 0.04937
+    z: -1.796729
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "wood_board.036"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.81298
+    y: 1.951762
+    z: -3.177483
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.037"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.976202
+    y: 1.951762
+    z: -3.177483
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.038"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.81298
+    y: 1.951762
+    z: -1.788374
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.039"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.976202
+    y: 1.951762
+    z: -1.806684
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.040"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.15165
+    y: 1.0
+    z: -3.343272
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.041"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.15165
+    y: 1.0
+    z: -3.219496
+  }
+  rotation {
+    x: -0.999997
+    y: 0.0
+    z: 0.0
+    w: 0.00253
+  }
+}
+instances {
+  id: "wood_board.042"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.15165
+    y: 1.0
+    z: -3.085969
+  }
+  rotation {
+    x: -0.00546
+    y: 0.0
+    z: 0.0
+    w: 0.999985
+  }
+}
+instances {
+  id: "wood_board.043"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.052459
+    y: 1.0
+    z: -1.66375
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.044"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.052459
+    y: 1.0
+    z: -1.7953
+  }
+  rotation {
+    x: 0.999972
+    y: 0.0
+    z: 0.0
+    w: 0.007495
+  }
+}
+instances {
+  id: "wood_board.045"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.052459
+    y: 1.0
+    z: -1.924588
+  }
+  rotation {
+    x: -0.000147
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.046"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.05616
+    y: 1.0
+    z: -3.343272
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.047"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.05616
+    y: 1.0
+    z: -3.219496
+  }
+  rotation {
+    x: -0.999997
+    y: 0.0
+    z: 0.0
+    w: 0.00253
+  }
+}
+instances {
+  id: "wood_board.048"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.05616
+    y: 1.0
+    z: -3.085969
+  }
+  rotation {
+    x: -0.00546
+    y: 0.0
+    z: 0.0
+    w: 0.999985
+  }
+}
+instances {
+  id: "wood_board.049"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.084458
+    y: 1.399631
+    z: -1.85697
+  }
+  rotation {
+    x: 0.764372
+    y: 0.0
+    z: 0.0
+    w: 0.644775
+  }
+}
+instances {
+  id: "wood_board.050"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.122558
+    y: 1.401392
+    z: -1.823631
+  }
+  rotation {
+    x: 0.649624
+    y: 0.0
+    z: 0.0
+    w: 0.760256
+  }
+}
+instances {
+  id: "wood_board.051"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.084458
+    y: 1.473676
+    z: -3.177483
+  }
+  rotation {
+    x: 0.708414
+    y: 0.0
+    z: 0.0
+    w: 0.705797
+  }
+}
+instances {
+  id: "wood_board.052"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.122558
+    y: 1.475437
+    z: -3.198261
+  }
+  rotation {
+    x: 0.814125
+    y: 0.0
+    z: 0.0
+    w: 0.58069
+  }
+}
+instances {
+  id: "wood_board.053"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.022717
+    y: 0.04937
+    z: -3.177483
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.054"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.184105
+    y: 0.04937
+    z: -3.203454
+  }
+  rotation {
+    x: 0.004115
+    y: -0.707095
+    z: -0.707095
+    w: 0.004115
+  }
+}
+instances {
+  id: "wood_board.055"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.120013
+    y: 0.04937
+    z: -3.177483
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.056"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.086268
+    y: 0.04937
+    z: -3.192541
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "wood_board.057"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.022717
+    y: 0.04937
+    z: -1.811319
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.058"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.184105
+    y: 0.04937
+    z: -1.805459
+  }
+  rotation {
+    x: 0.004115
+    y: -0.707095
+    z: -0.707095
+    w: 0.004115
+  }
+}
+instances {
+  id: "wood_board.059"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.120013
+    y: 0.04937
+    z: -1.842839
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.060"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.086268
+    y: 0.04937
+    z: -1.796729
+  }
+  rotation {
+    x: 0.0
+    y: 0.707107
+    z: 0.707107
+    w: 0.0
+  }
+}
+instances {
+  id: "wood_board.061"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.022717
+    y: 1.951762
+    z: -3.177483
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.062"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.185939
+    y: 1.951762
+    z: -3.177483
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.063"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.022717
+    y: 1.951762
+    z: -1.788374
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.064"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.185939
+    y: 1.951762
+    z: -1.806684
+  }
+  rotation {
+    x: 0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.065"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.877721
+    y: 1.687095
+    z: -2.3632
+  }
+  rotation {
+    x: -0.670446
+    y: 0.0
+    z: 0.0
+    w: 0.741958
+  }
+}
+instances {
+  id: "wood_board.066"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.120836
+    y: 1.930122
+    z: -2.498308
+  }
+  rotation {
+    x: -0.710957
+    y: 0.0
+    z: 0.0
+    w: 0.703235
+  }
+}
+instances {
+  id: "wood_board.067"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.085612
+    y: 1.806773
+    z: -2.498308
+  }
+  rotation {
+    x: 0.696519
+    y: 0.0
+    z: 0.0
+    w: 0.717539
+  }
+}
+instances {
+  id: "wood_board.068"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.120836
+    y: 1.631405
+    z: -2.356109
+  }
+  rotation {
+    x: -0.660836
+    y: 0.0
+    z: 0.0
+    w: 0.750531
+  }
+}
+instances {
+  id: "wood_board.069"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.088612
+    y: 1.687095
+    z: -2.3632
+  }
+  rotation {
+    x: -0.715049
+    y: 0.0
+    z: 0.0
+    w: 0.699074
+  }
+}
+instances {
+  id: "wood_board.070"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.150518
+    y: 1.0
+    z: -1.66375
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.071"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.150518
+    y: 1.0
+    z: -1.7953
+  }
+  rotation {
+    x: 0.999972
+    y: 0.0
+    z: 0.0
+    w: 0.007495
+  }
+}
+instances {
+  id: "wood_board.072"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.150518
+    y: 1.0
+    z: -1.924588
+  }
+  rotation {
+    x: -0.000147
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.073"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.206989
+    y: 0.040331
+    z: -1.790488
+  }
+  rotation {
+    x: -0.521334
+    y: -0.521334
+    z: -0.477715
+    w: 0.477714
+  }
+}
+instances {
+  id: "wood_board.074"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.206989
+    y: 0.040331
+    z: -3.140581
+  }
+  rotation {
+    x: -0.521334
+    y: -0.521334
+    z: -0.477715
+    w: 0.477714
+  }
+}
+instances {
+  id: "wood_board.075"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.874722
+    y: 0.257196
+    z: -1.785731
+  }
+  rotation {
+    x: 0.890278
+    y: 0.0
+    z: 0.0
+    w: 0.455417
+  }
+}
+instances {
+  id: "wood_board.076"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.908706
+    y: 0.257196
+    z: -1.785731
+  }
+  rotation {
+    x: -0.689245
+    y: 0.0
+    z: 0.0
+    w: 0.724528
+  }
+}
+instances {
+  id: "wood_board.077"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.908706
+    y: 1.144779
+    z: -1.601027
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.078"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.908706
+    y: 0.569874
+    z: -1.601027
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.079"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.908706
+    y: 1.144779
+    z: -3.383887
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.080"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.908706
+    y: 0.569874
+    z: -3.383887
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.081"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.089656
+    y: 1.144779
+    z: -3.383887
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.082"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.089656
+    y: 0.569874
+    z: -3.383887
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.083"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.089656
+    y: 1.144779
+    z: -1.605118
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.084"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.089656
+    y: 0.569874
+    z: -1.605118
+  }
+  rotation {
+    x: 0.000313
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+instances {
+  id: "wood_board.085"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.084458
+    y: 0.257631
+    z: -1.85697
+  }
+  rotation {
+    x: -0.826058
+    y: 0.0
+    z: 0.0
+    w: 0.563585
+  }
+}
+instances {
+  id: "wood_board.086"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.122558
+    y: 0.259392
+    z: -1.823631
+  }
+  rotation {
+    x: 0.649624
+    y: 0.0
+    z: 0.0
+    w: 0.760256
+  }
+}
+instances {
+  id: "wood_board.087"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.084458
+    y: 0.257631
+    z: -3.195848
+  }
+  rotation {
+    x: -0.826058
+    y: 0.0
+    z: 0.0
+    w: 0.563585
+  }
+}
+instances {
+  id: "wood_board.088"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.122558
+    y: 0.259392
+    z: -3.162509
+  }
+  rotation {
+    x: 0.748523
+    y: 0.0
+    z: 0.0
+    w: 0.663109
+  }
+}
+instances {
+  id: "wood_board.089"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.301619
+    y: 1.014331
+    z: -1.823592
+  }
+  rotation {
+    x: -0.511451
+    y: 0.488282
+    z: 0.488281
+    w: 0.51145
+  }
+}
+instances {
+  id: "wood_board.090"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.161228
+    y: 1.624852
+    z: -1.823592
+  }
+  rotation {
+    x: -0.511451
+    y: 0.488282
+    z: 0.488281
+    w: 0.51145
+  }
+}
+instances {
+  id: "wood_board.091"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.93938
+    y: 0.274078
+    z: -1.823592
+  }
+  rotation {
+    x: -0.511451
+    y: 0.488282
+    z: 0.488281
+    w: 0.51145
+  }
+}
+instances {
+  id: "wood_board.092"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.16574
+    y: 1.250376
+    z: -1.823592
+  }
+  rotation {
+    x: -0.490313
+    y: 0.509504
+    z: 0.509503
+    w: 0.490312
+  }
+}
+instances {
+  id: "wood_board.093"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.026771
+    y: 0.761193
+    z: -1.823592
+  }
+  rotation {
+    x: -0.490313
+    y: 0.509504
+    z: 0.509503
+    w: 0.490312
+  }
+}
+instances {
+  id: "wood_board.094"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.570149
+    y: 0.383468
+    z: -1.823592
+  }
+  rotation {
+    x: -0.490313
+    y: 0.509504
+    z: 0.509503
+    w: 0.490312
+  }
+}
+instances {
+  id: "wood_board.095"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.819679
+    y: 0.644176
+    z: -1.823592
+  }
+  rotation {
+    x: -0.490313
+    y: 0.509504
+    z: 0.509503
+    w: 0.490312
+  }
+}
+instances {
+  id: "wood_board.096"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.742048
+    y: 1.095561
+    z: -3.094515
+  }
+  rotation {
+    x: -0.511451
+    y: 0.488282
+    z: 0.488281
+    w: 0.51145
+  }
+}
+instances {
+  id: "wood_board.097"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.161228
+    y: 1.68525
+    z: -3.096632
+  }
+  rotation {
+    x: -0.511451
+    y: 0.488282
+    z: 0.488281
+    w: 0.51145
+  }
+}
+instances {
+  id: "wood_board.098"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.93938
+    y: 0.276262
+    z: -3.094515
+  }
+  rotation {
+    x: -0.511451
+    y: 0.488282
+    z: 0.488281
+    w: 0.51145
+  }
+}
+instances {
+  id: "wood_board.099"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.16574
+    y: 1.216179
+    z: -3.094515
+  }
+  rotation {
+    x: -0.482153
+    y: 0.517232
+    z: 0.517231
+    w: 0.482153
+  }
+}
+instances {
+  id: "wood_board.100"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.519009
+    y: 0.749089
+    z: -3.114159
+  }
+  rotation {
+    x: -0.490313
+    y: 0.509504
+    z: 0.509503
+    w: 0.490312
+  }
+}
+instances {
+  id: "wood_board.101"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.235898
+    y: 0.39912
+    z: -3.118334
+  }
+  rotation {
+    x: -0.490313
+    y: 0.509504
+    z: 0.509503
+    w: 0.490312
+  }
+}
+instances {
+  id: "wood_board.102"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.925858
+    y: 0.63332
+    z: -3.112672
+  }
+  rotation {
+    x: -0.490313
+    y: 0.509504
+    z: 0.509503
+    w: 0.490312
+  }
+}
+instances {
+  id: "wood_board.103"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.71207
+    y: 1.451222
+    z: -3.094515
+  }
+  rotation {
+    x: -0.511451
+    y: 0.488282
+    z: 0.488281
+    w: 0.51145
+  }
+}
+instances {
+  id: "wood_board.104"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.44428
+    y: 1.930122
+    z: -2.498308
+  }
+  rotation {
+    x: -0.710957
+    y: 0.0
+    z: 0.0
+    w: 0.703235
+  }
+}
+instances {
+  id: "wood_board.105"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.47293
+    y: 1.951762
+    z: -1.870139
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.106"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.401445
+    y: 1.951762
+    z: -1.870139
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.107"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.47293
+    y: 1.951762
+    z: -3.1553
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.108"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.401445
+    y: 1.951762
+    z: -3.1553
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.109"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.735852
+    y: 1.930122
+    z: -2.498308
+  }
+  rotation {
+    x: -0.710957
+    y: 0.0
+    z: 0.0
+    w: 0.703235
+  }
+}
+instances {
+  id: "wood_board.110"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.764502
+    y: 1.951762
+    z: -1.870139
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.111"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.693017
+    y: 1.951762
+    z: -1.870139
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.112"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.764502
+    y: 1.951762
+    z: -3.1553
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.113"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -1.693017
+    y: 1.951762
+    z: -3.1553
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.114"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.980826
+    y: 1.930122
+    z: -2.498308
+  }
+  rotation {
+    x: -0.710957
+    y: 0.0
+    z: 0.0
+    w: 0.703235
+  }
+}
+instances {
+  id: "wood_board.115"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.009477
+    y: 1.951762
+    z: -1.870139
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.116"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.937991
+    y: 1.951762
+    z: -1.870139
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.117"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -3.009477
+    y: 1.951762
+    z: -3.1553
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.118"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.937991
+    y: 1.951762
+    z: -3.1553
+  }
+  rotation {
+    x: -0.707107
+    y: 0.0
+    z: 0.0
+    w: 0.707107
+  }
+}
+instances {
+  id: "wood_board.119"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.980826
+    y: 1.832673
+    z: -2.049505
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+instances {
+  id: "wood_board.120"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.729028
+    y: 1.832673
+    z: -2.017836
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+instances {
+  id: "wood_board.121"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.980826
+    y: 1.832673
+    z: -2.327197
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+instances {
+  id: "wood_board.122"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.541843
+    y: 1.832673
+    z: -2.295528
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+instances {
+  id: "wood_board.123"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.980826
+    y: 1.832673
+    z: -2.632216
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+instances {
+  id: "wood_board.124"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.559608
+    y: 1.832673
+    z: -2.600547
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+instances {
+  id: "wood_board.125"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -2.980826
+    y: 1.832673
+    z: -2.998279
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+instances {
+  id: "wood_board.126"
+  prototype: "/src/Objects/wood_board.go"
+  position {
+    x: -4.669027
+    y: 1.832673
+    z: -2.96661
+  }
+  rotation {
+    x: -0.502723
+    y: 0.497262
+    z: 0.502723
+    w: 0.497262
+  }
+}
+scale_along_z: 0

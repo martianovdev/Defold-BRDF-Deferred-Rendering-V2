@@ -1,0 +1,41 @@
+script: "/src/render.render_script"
+render_resources {
+  name: "GBuffer"
+  path: "/src/Assets/Materials/Deferred/GBuffer/GBuffer.material"
+}
+render_resources {
+  name: "LightingPass"
+  path: "/src/Assets/Materials/Deferred/LightingPass/LightingPass.material"
+}
+render_resources {
+  name: "SSAO"
+  path: "/src/Assets/Materials/Postprocess/SSAO/SSAO.material"
+}
+render_resources {
+  name: "DepthPass"
+  path: "/src/Assets/Materials/Deferred/DepthPass/DepthPass.material"
+}
+render_resources {
+  name: "CombinePass"
+  path: "/src/Assets/Materials/Deferred/CombinePass/CombinePass.material"
+}
+render_resources {
+  name: "FisheyeAberration"
+  path: "/src/Assets/Materials/Postprocess/FisheyeAberration/FisheyeAberration.material"
+}
+render_resources {
+  name: "FidelityFX_FSREasu"
+  path: "/src/Assets/Materials/Postprocess/FidelityFX/FidelityFX_FSREasu.material"
+}
+render_resources {
+  name: "FidelityFX_FSRRcas"
+  path: "/src/Assets/Materials/Postprocess/FidelityFX/FidelityFX_FSRRcas.material"
+}
+render_resources {
+  name: "TiledLighting"
+  path: "/src/Assets/Materials/Deferred/TiledLighting/TiledLighting.material"
+}
+render_resources {
+  name: "VolumetricLighting"
+  path: "/src/Assets/Materials/Deferred/VolumetricLighting/VolumetricLighting.material"
+}

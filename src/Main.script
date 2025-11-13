@@ -1,0 +1,54 @@
+local Core = require("src.Modules.Core.Core")
+
+local function to_number(s)
+	if not s then return nil end
+	s = s:gsub(",", ".")
+	return tonumber(s)
+end
+
+
+function init(self)
+	Core:main()
+
+
+	Core:load_proxy({
+		proxy_url = "/proxy#scene_collectionproxy",
+		collection_name = "Scene",
+		init_data = nil
+	})
+	
+	self.fps_counter = 0      -- frame counter
+	self.fps_timer = 0        -- time since last output
+end
+
+function update(self, dt)
+	Core:update()
+	-- increment counter each frame
+	self.fps_counter = self.fps_counter + 1
+	self.fps_timer = self.fps_timer + dt
+
+	-- output frame count once per second
+	if self.fps_timer >= 1 then
+		print("FPS: " .. self.fps_counter)
+		self.fps_counter = 0
+		self.fps_timer = self.fps_timer - 1
+	end
+
+
+end
+
+function fixed_update(self, dt)
+
+end
+
+function on_input(self, action_id, action)
+
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+		msg.post(sender, "acquire_input_focus")
+	end
+end

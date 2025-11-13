@@ -1,0 +1,94 @@
+#version 140
+
+// =====================================================================================
+// Deferred G-Buffer Vertex Shader
+// Transforms vertices and computes TBN basis for normal mapping in world space.
+// Outputs position, texture coordinates, and tangent/bitangent/normal vectors.
+//
+// Author: Mikhail Martianov | martianov.tech
+// =====================================================================================
+
+in vec4 position;
+in vec2 texcoord0;
+in vec3 normal;
+in vec4 tangent;      // xyz = tangent, w = handedness (+1 or -1)
+
+uniform mtx_uniforms
+{
+    uniform mat4 mtx_worldview;
+    uniform mat4 mtx_world;
+    uniform mat4 mtx_view;
+    uniform mat4 mtx_proj;
+};
+
+out vec2 var_texcoord0;
+out vec3 var_T;
+out vec3 var_B;
+out vec3 var_N;
+out vec4 var_position;
+
+// ----------------- helpers -----------------
+mat3 inverse3x3(mat3 m)
+{
+    // m[col][row]
+    float a = m[0][0], b = m[0][1], c = m[0][2];
+    float d = m[1][0], e = m[1][1], f = m[1][2];
+    float g = m[2][0], h = m[2][1], i = m[2][2];
+
+    float A =   e*i - f*h;
+    float B = -(d*i - f*g);
+    float C =   d*h - e*g;
+
+    float D = -(b*i - c*h);
+    float E =   a*i - c*g;
+    float F = -(a*h - b*g);
+
+    float G =   b*f - c*e;
+    float H = -(a*f - c*d);
+    float I =   a*e - b*d;
+
+    float det = a*A + b*B + c*C;
+
+    // protection from degeneracy
+    if (abs(det) < 1e-8)
+    return mat3(1.0);
+
+    return mat3(
+        A, D, G,
+        B, E, H,
+        C, F, I
+    ) / det;
+}
+
+mat3 normalMatrixFrom(mat4 M)
+{
+    // normalMat = transpose(inverse(mat3(M)))
+    mat3 m3 = mat3(M);
+    return transpose(inverse3x3(m3));
+}
+// -------------------------------------------
+
+void main()
+{
+    var_texcoord0 = texcoord0;
+
+    // position (view) and clip
+    vec4 p = mtx_worldview * vec4(position.xyz, 1.0);
+    var_position = p;
+    gl_Position = mtx_proj * p;
+
+    // normal matrix to WORLD space
+    mat3 Nmat = normalMatrixFrom(mtx_world);
+
+    // TBN basis in world space
+    vec3 Nw = normalize(Nmat * normal);
+    vec3 Tw = normalize(Nmat * tangent.xyz);
+
+    // orthonormalize T relative to N
+    Tw = normalize(Tw - Nw * dot(Tw, Nw));
+    vec3 Bw = normalize(cross(Nw, Tw)) * tangent.w;
+
+    var_T = Tw;
+    var_B = Bw;
+    var_N = Nw;
+}

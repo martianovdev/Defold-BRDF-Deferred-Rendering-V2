@@ -1,0 +1,41 @@
+#version 140
+
+// =====================================================================================
+// Billboard Vertex Shader
+// Camera-facing billboard shader for point light visualization.
+// Orients quad sprites to always face the camera.
+//
+// Author: Mikhail Martianov | martianov.tech
+// =====================================================================================
+
+in vec2 position;      // local XY plane coordinates, [-0.5..0.5] or [0..1]
+in vec2 texcoord0;
+
+out vec2 v_uv;
+
+uniform vs_uniforms {
+    uniform mediump mat4 mtx_world; 
+    uniform mediump mat4 mtx_view; 
+    uniform mediump mat4 mtx_proj; 
+};
+
+void main()
+{
+    // Get center from world position (mtx_world * (0,0,0,1))
+    vec3 world_center = (mtx_world * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
+
+    // Extract camera axes from inverse(view)
+    mat3 cam_rot = transpose(mat3(mtx_view));
+    vec3 right = cam_rot[0]; // camera X-axis
+    vec3 up    = cam_rot[1]; // camera Y-axis
+
+    // Billboard scale (if need to change size - set in original plane)
+    float size = 1.0;
+
+    // Build world position of vertex
+    vec3 world_pos = world_center + right * (position.x * size)
+    + up    * (position.y * size);
+
+    gl_Position = mtx_proj * mtx_view * vec4(world_pos, 1.0);
+    v_uv = texcoord0;
+}

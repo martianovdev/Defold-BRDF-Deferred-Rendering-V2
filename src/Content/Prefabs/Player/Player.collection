@@ -1,0 +1,77 @@
+name: "Player"
+instances {
+  id: "Camera"
+  prototype: "/src/Modules/Render/Scene/Nodes/Camera.go"
+  position {
+    y: 1.1
+  }
+}
+instances {
+  id: "SpotLight"
+  prototype: "/src/Modules/Render/Scene/Nodes/SpotLight.go"
+  position {
+    x: 0.2
+  }
+  component_properties {
+    id: "Light"
+    properties {
+      id: "color"
+      value: "1.0, 0.8, 0.7, 10.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "radius"
+      value: "0.01"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "player"
+  children: "Camera"
+  children: "body"
+  data: "components {\n"
+  "  id: \"Player\"\n"
+  "  component: \"/src/Content/Prefabs/Player/Player.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "body"
+  data: "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.0\\n"
+  "restitution: 0.0\\n"
+  "group: \\\"default\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "embedded_collision_shape {\\n"
+  "  shapes {\\n"
+  "    shape_type: TYPE_CAPSULE\\n"
+  "    position {\\n"
+  "      y: 0.8\\n"
+  "    }\\n"
+  "    rotation {\\n"
+  "    }\\n"
+  "    index: 0\\n"
+  "    count: 2\\n"
+  "  }\\n"
+  "  data: 0.25\\n"
+  "  data: 1.2\\n"
+  "}\\n"
+  "event_trigger: false\\n"
+  "\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "hands"
+  children: "SpotLight"
+  data: ""
+  position {
+    y: 1.1
+  }
+}

@@ -1,0 +1,29 @@
+local Core = require("src.Modules.Core.Core")
+
+go.property("color", vmath.vector4(1, 1, 1, 1))
+go.property("radius", 8)
+go.property("volume_radius", 8)
+go.property("shadows", false)
+
+function init(self)
+	msg.post(".", "start")
+end
+
+local function start(self)
+	self.world = Core:get_world()
+	self.id = self.world:create_light_source()
+	self.world:light_set_transform(self.id, go.get_world_transform())
+	self.world:light_set_type(self.id, 0.0)
+	self.world:light_set_color(self.id, self.color)
+	self.world:light_set_radius(self.id, self.radius)
+	self.world:light_set_volume_radius(self.id, self.volume_radius)
+	self.world:light_set_shadows(self.id, self.shadows)
+end
+
+function update(self, dt)
+	self.world:light_set_transform(self.id, go.get_world_transform())
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("start") then start(self) end
+end

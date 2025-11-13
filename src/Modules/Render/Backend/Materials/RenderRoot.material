@@ -1,0 +1,26 @@
+name: "ui_root"
+tags: "render_root"
+vertex_program: "/src/Modules/Render/Backend/Shaders/RenderRoot.vp"
+fragment_program: "/src/Modules/Render/Backend/Shaders/RenderRoot.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+fragment_constants {
+  name: "surface_size"
+  type: CONSTANT_TYPE_USER
+  value {
+  }
+}
+samplers {
+  name: "texture_sampler"
+  wrap_u: WRAP_MODE_CLAMP_TO_EDGE
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+}
+attributes {
+  name: "local_position"
+  semantic_type: SEMANTIC_TYPE_POSITION
+  vector_type: VECTOR_TYPE_VEC3
+}

@@ -1,0 +1,29 @@
+#version 140
+
+// =====================================================================================
+// Area Light Vertex Shader
+// Transforms area light quad vertices for rendering.
+//
+// Author: Mikhail Martianov | martianov.tech
+// =====================================================================================
+
+in vec2 position;      // local XY plane coordinates (z=0)
+in vec2 texcoord0;
+
+out vec2 v_uv;
+
+uniform vs_uniforms {
+    uniform mediump mat4 mtx_world; 
+    uniform mediump mat4 mtx_view; 
+    uniform mediump mat4 mtx_proj; 
+};
+
+void main()
+{
+    // Build position in world coordinates and then to clip-space
+    vec4 world_pos = mtx_world * vec4(position.xy, 0.0, 1.0);
+    gl_Position    = mtx_proj * mtx_view * world_pos;
+
+    // Pass UV as is
+    v_uv = texcoord0;
+}

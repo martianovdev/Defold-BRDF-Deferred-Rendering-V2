@@ -1,0 +1,32 @@
+local Math3D = require("src.Modules.Math3D")
+local Core = require("src.Modules.Core.Core")
+
+go.property("tag", hash("main"))
+
+function init(self)
+	msg.post(".", "start")
+end
+local function start(self)
+	self.camera_comp = msg.url("#camera")
+
+	self.world = Core:get_world()
+	self.id = self.world:create_camera(self.tag)
+end
+
+function on_input(self, action_id, action)
+
+end
+
+function update(self, dt)
+	local view = camera.get_view(self.camera_comp)
+	local transform = go.get_world_transform()
+	msg.post("@render:", "camera_update", { view = view, transform = transform } )
+
+	self.world:camera_set_transform(self.id, transform)
+	self.world:camera_set_view(self.id, view)
+end
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("start") then start(self) end
+end

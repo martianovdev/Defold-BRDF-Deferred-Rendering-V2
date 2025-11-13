@@ -1,0 +1,114 @@
+platforms:
+  armv7-ios:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      frameworks: []
+      linkFlags: []
+  arm64-ios:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      frameworks: []
+      linkFlags: []
+  x86_64-ios:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      frameworks: []
+      linkFlags: []
+  armv7-android:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeJars: []
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      linkFlags: []
+      jetifier: true
+  arm64-android:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeJars: []
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      linkFlags: []
+      jetifier: true
+  arm64-osx:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      frameworks: []
+      linkFlags: []
+  x86_64-osx:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      frameworks: []
+      linkFlags: []
+  x86_64-linux:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      dynamicLibs: []
+      linkFlags: []
+  arm64-linux:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      dynamicLibs: []
+      linkFlags: []
+  x86-win32:
+    context:
+      excludeLibs: [librecord, vpx, libbox2d, libscript_box2d, libdecoder_wav, libimage, libphysics, libbox2d_defold, libscript_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [librecord_null.lib, libdecoder_opus.lib, libopus.lib, libimage_null.lib, libphysics_3d.lib]
+      linkFlags: []
+  x86_64-win32:
+    context:
+      excludeLibs: [librecord, vpx, libbox2d, libscript_box2d, libdecoder_wav, libimage, libphysics, libbox2d_defold, libscript_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [librecord_null.lib, libdecoder_opus.lib, libopus.lib, libimage_null.lib, libphysics_3d.lib]
+      linkFlags: []
+  js-web:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeJsLibs: []
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      linkFlags: []
+      emscriptenLinkFlags: []
+  wasm-web:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeJsLibs: []
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      linkFlags: []
+      emscriptenLinkFlags: []
+  wasm_pthread-web:
+    context:
+      excludeLibs: [record, vpx, box2d, script_box2d, decoder_wav, image, physics, box2d_defold, script_box2d_defold]
+      excludeSymbols: [AudioDecoderWav, ResourceTypeWav, ScriptImageExt, ScriptBox2DExt]
+      symbols: [AudioDecoderOpus, ResourceTypeOpus]
+      libs: [record_null, decoder_opus, opus, image_null, physics_3d]
+      emscriptenLinkFlags: []

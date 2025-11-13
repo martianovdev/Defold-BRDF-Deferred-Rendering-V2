@@ -1,0 +1,17 @@
+name: "model"
+tags: "model"
+vertex_program: "/src/Assets/Materials/Deferred/VolumetricLighting/VolumetricLighting.vp"
+fragment_program: "/src/Assets/Materials/Deferred/VolumetricLighting/VolumetricLighting.fp"
+vertex_space: VERTEX_SPACE_LOCAL
+vertex_constants {
+  name: "mtx_view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+samplers {
+  name: "texture_depth_full"
+  wrap_u: WRAP_MODE_REPEAT
+  wrap_v: WRAP_MODE_REPEAT
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+  max_anisotropy: 0.0
+}

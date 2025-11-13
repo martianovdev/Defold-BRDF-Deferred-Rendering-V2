@@ -1,0 +1,38 @@
+#version 140
+
+// =====================================================================================
+// Fisheye Aberration Vertex Shader
+// Full-screen quad vertex shader for fisheye and chromatic aberration post-processing.
+//
+// Author: Mikhail Martianov | martianov.tech
+// =====================================================================================
+
+in vec4 position;
+in vec2 texcoord0;
+in vec3 normal;
+
+uniform mtx_uniforms
+{
+    uniform mat4 mtx_worldview;
+    uniform mat4 mtx_proj;
+    uniform mat4 mtx_world;
+};
+
+
+out vec4 var_position;
+out vec3 var_normal;
+out vec2 var_texcoord0;
+
+void main()
+{
+    var_texcoord0 = texcoord0;
+
+    // Apply world and view matrices to vertex position
+    vec4 p = mtx_worldview * vec4(position.xyz, 1.0);
+    vec4 p_w = mtx_world * vec4(position.xyz, 1.0);
+
+    var_normal = normalize((mtx_world * vec4(normal, 0.0)).xyz);
+    var_position = p; 
+
+    gl_Position = mtx_proj * p;
+}

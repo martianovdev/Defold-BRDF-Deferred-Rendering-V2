@@ -1,0 +1,26 @@
+// =====================================================================================
+// Render Root Vertex Shader
+// Root rendering pass vertex shader for UI and overlay rendering.
+//
+// Author: Mikhail Martianov | martianov.tech
+// =====================================================================================
+
+uniform highp mat4 view_proj;
+
+// positions are in world space
+attribute mediump vec3 position;
+attribute mediump vec2 texcoord0;
+attribute mediump vec3 local_position;
+attribute lowp vec4 color;
+
+varying mediump vec2 var_texcoord0;
+varying lowp vec3 u_local_position;
+varying lowp vec4 var_color;
+
+void main()
+{
+    var_texcoord0 = texcoord0;
+    u_local_position = local_position;
+    var_color = vec4(color.rgb * color.a, color.a);
+    gl_Position = view_proj * vec4(position.xyz, 1.0);
+}

@@ -1,0 +1,26 @@
+name: "Scene"
+instances {
+  id: "LevelCollision"
+  prototype: "/src/Content/Levels/Level_01/LevelCollision.go"
+}
+collection_instances {
+  id: "Player"
+  collection: "/src/Content/Prefabs/Player/Player.collection"
+  position {
+    x: -8.0
+    z: 4.0
+  }
+}
+collection_instances {
+  id: "Level"
+  collection: "/src/Content/Levels/Level_01/Level.collection"
+}
+scale_along_z: 0
+embedded_instances {
+  id: "Scene"
+  data: "components {\n"
+  "  id: \"Scene\"\n"
+  "  component: \"/src/Content/Rooms/Scene.script\"\n"
+  "}\n"
+  ""
+}

@@ -1,0 +1,304 @@
+local CollectionStore = require("src.Modules.CollectionStore.CollectionStore")
+local Core = require("src.Modules.Core.Core")
+local SSAOUtils = require("src.Modules.Render.Backend.Modules.SSAOUtils")
+
+
+function init(self)
+	
+	--profiler.enable_ui(true)
+	profiler.set_ui_view_mode(profiler.VIEW_MODE_MINIMIZED)
+	--pprint(profiler.dump_frame())
+	
+	Core:world(function(toolkit)
+		return {
+			camera_tag = hash("main"),
+			predicates = {
+				model = render.predicate({hash("model")}),
+				glass = render.predicate({hash("glass")}),
+			},
+
+			tiled_lighting_rt = toolkit:create_render_target(512, 512, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_R32F, clear_color = vmath.vector4(0, 0, 0, 1.0)},
+			}),
+			
+			gbuffer_rt = toolkit:create_render_target(512, 512, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)}, -- albedo
+				{buffer_type = graphics.BUFFER_TYPE_COLOR1_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)}, -- normal, rough
+				{buffer_type = graphics.BUFFER_TYPE_COLOR2_BIT, format = graphics.TEXTURE_FORMAT_R32F, clear_color = vmath.vector4(0, 0, 0, 1.0)}, -- normal, rough
+				{buffer_type = graphics.BUFFER_TYPE_DEPTH_BIT, format = graphics.TEXTURE_FORMAT_DEPTH}, -- Depth buffer
+			}),
+
+			lighting_rt = toolkit:create_render_target(640, 480, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)}
+			}),
+
+			lighting_half_rt = toolkit:create_render_target(640, 480, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)}
+			}),
+
+			glass_rt = toolkit:create_render_target(512, 512, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 0.0)},
+				{buffer_type = graphics.BUFFER_TYPE_COLOR1_BIT, format = graphics.TEXTURE_FORMAT_RGB, clear_color = vmath.vector4(0, 0, 0, 1.0)}, -- normal
+				{buffer_type = graphics.BUFFER_TYPE_DEPTH_BIT, format = graphics.TEXTURE_FORMAT_DEPTH}, -- Depth buffer
+			}),
+			
+
+			final_rt = toolkit:create_render_target(512, 512, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)},
+			}),
+
+			combine_rt = toolkit:create_render_target(640, 480, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)}
+			}),
+
+			fisheye_aberration_rt = toolkit:create_render_target(640, 480, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)}
+			}),
+
+			ssao_rt = toolkit:create_render_target(512, 512, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(1, 1, 1, 1.0)}, -- SSAO output (white = no occlusion)
+			}),
+
+			light_shadowmap_rt = toolkit:create_render_target(2000, 2000, {
+				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_R16F, clear_color = vmath.vector4(0, 0, 0, 1.0)}, -- Store depth into RGBA texture
+				{buffer_type = graphics.BUFFER_TYPE_DEPTH_BIT, format = graphics.TEXTURE_FORMAT_DEPTH}, -- Depth buffer
+			}),
+			shadowmap_step_counter = 0,
+		}
+	end, function(toolkit, world, props, render_width, render_height)
+		local camera = world:get_camera(props.camera_tag)
+	
+		if(render_width ~= props.gbuffer_rt.width or render_height ~= props.gbuffer_rt.height) then
+			props.gbuffer_rt:resize(render_width, render_height)
+			props.tiled_lighting_rt:resize(render_width/10, render_height/10)
+			props.lighting_rt:resize(render_width, render_height)
+			props.glass_rt:resize(render_width, render_height)
+			props.ssao_rt:resize(render_width/1.5, render_height/1.5)
+			
+			props.final_rt:resize(render_width, render_height)
+
+			props.combine_rt:resize(render_width, render_height)
+			props.fisheye_aberration_rt:resize(render_width, render_height)
+		end
+
+		local light_transform_array = 	world.light_source_flat_arrays.transform_array
+		local light_color_array =  		world.light_source_flat_arrays.color_array
+		local light_properties_array =  world.light_source_flat_arrays.properties_array
+		local light_vol_params_array =  world.light_source_flat_arrays.vol_params_array
+
+-- 
+-- 		-- Render lighting shadows once per second (TODO: Make smart shadow rendering by calculating only active sources in the frame)
+		if(props.shadowmap_step_counter >= 144) then
+			toolkit:bind_render_target(props.light_shadowmap_rt, function()
+				toolkit:bind_material("DepthPass", function()
+					for i=1, #light_transform_array do
+						if(light_properties_array[i].w > 0) then
+							local light_position = light_transform_array[i].c3
+							toolkit:render_multi_cubemap(
+								vmath.vector3(light_position.x, light_position.y, light_position.z),
+								i-1, -- cubemap index in atlas
+								200, -- face size
+								function(draw_options)
+									render.draw(props.predicates.model, draw_options) -- render scene into cubemap
+									--render.draw(props.predicates.glass, draw_options) -- render scene into cubemap
+								end
+							)
+						end
+					end
+				end)
+			end)
+			props.shadowmap_step_counter = 0
+		else
+			props.shadowmap_step_counter = props.shadowmap_step_counter + 1
+		end
+
+		toolkit:bind_render_target(props.gbuffer_rt, function()
+			toolkit:render_camera(camera, function()
+				toolkit:bind_material("GBuffer", function()
+					toolkit:draw_predicate(props.predicates.model, {})
+				end)
+			end)
+		end)
+
+		-- SSAO Pass: Compute ambient occlusion from GBuffer
+		toolkit:bind_render_target(props.ssao_rt, function()
+			toolkit:bind_material("SSAO", function()
+				toolkit:draw_render_target(
+					props.gbuffer_rt,
+					nil, nil, nil, nil,
+					{
+						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR1_BIT}, -- normals
+						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR2_BIT}, -- depth
+					},{
+						-- Camera matrices
+						mtx_camera_mvp = camera.projection * camera.view,
+						mtx_camera_projection = camera.projection,
+						mtx_camera_projection_inv = vmath.inv(camera.projection),
+						mtx_camera_view = camera.view,
+					}
+				)
+			end)
+		end)
+
+		toolkit:bind_render_target(props.tiled_lighting_rt, function()
+			toolkit:bind_material("TiledLighting", function()
+				toolkit:draw_render_target(
+					props.gbuffer_rt,
+					nil, nil, nil, nil,
+					{
+						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR1_BIT}, -- normals
+						{props.light_shadowmap_rt, graphics.BUFFER_TYPE_COLOR0_BIT},      -- shadow map
+						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR2_BIT},  -- depth full
+					},{
+						-- Light uniforms
+						light_count = vmath.vector4(#light_transform_array, 0, 0, 0),
+						light_transform_array = light_transform_array,
+						light_color_array = light_color_array,
+						light_properties_array = light_properties_array,
+
+						-- Camera matrices
+						mtx_camera_projection = camera.projection,
+						mtx_camera_projection_inv = vmath.inv(camera.projection),
+						mtx_camera_view = camera.view,
+						mtx_camera_view_inv = vmath.inv(camera.view),
+					}
+				)
+			end)
+		end)
+
+		toolkit:bind_render_target(props.lighting_rt, function()
+			toolkit:bind_material("LightingPass", function()
+				toolkit:draw_render_target(
+					props.gbuffer_rt,
+					nil, nil, nil, nil,
+					{
+						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- albedo
+						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR1_BIT}, -- normals
+						{props.light_shadowmap_rt, graphics.BUFFER_TYPE_COLOR0_BIT},      -- shadow map
+						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR2_BIT},  -- depth full
+						{props.tiled_lighting_rt, graphics.BUFFER_TYPE_COLOR0_BIT},
+					},{
+						-- Light uniforms
+						light_count = vmath.vector4(#light_transform_array, 0, 0, 0),
+						light_transform_array = light_transform_array,
+						light_color_array = light_color_array,
+						light_properties_array = light_properties_array,
+
+						-- Camera matrices
+						mtx_camera_mvp = camera.projection * camera.view,
+						mtx_camera_projection = camera.projection,
+						mtx_camera_projection_inv = vmath.inv(camera.projection),
+						mtx_camera_view = camera.view,
+						mtx_camera_view_inv = vmath.inv(camera.view),
+
+						scene_env = vmath.vector4(0.0, 0.001, 1.0 / (4.0 * math.pi), 0.0),
+					}
+				)
+			end)
+		end)
+
+		toolkit:bind_render_target(props.glass_rt, function()
+			toolkit:render_camera(camera, function()
+				render.enable_texture(0, props.lighting_rt.render_target, graphics.BUFFER_TYPE_COLOR0_BIT) --background
+				render.enable_texture(1, props.gbuffer_rt.render_target, graphics.BUFFER_TYPE_COLOR2_BIT) --background depth
+				toolkit:draw_predicate(props.predicates.glass, {
+					-- Light uniforms
+					light_count = vmath.vector4(#light_transform_array, 0, 0, 0),
+					light_transform_array = light_transform_array,
+					light_color_array = light_color_array,
+					light_properties_array = light_properties_array,
+
+					-- Camera matrices
+					mtx_camera_mvp = camera.projection * camera.view,
+					mtx_camera_projection = camera.projection,
+					mtx_camera_projection_inv = vmath.inv(camera.projection),
+					mtx_camera_view = camera.view,
+					mtx_camera_view_inv = vmath.inv(camera.view),
+
+					scene_env = vmath.vector4(0.0, 0.001, 1.0 / (4.0 * math.pi), 0.0),
+				})
+				render.disable_texture(0)
+				render.disable_texture(1)
+			end)
+		end)
+
+		toolkit:bind_render_target(props.final_rt, function()
+			toolkit:bind_material("CombinePass", function()
+				toolkit:draw_render_target(
+					props.gbuffer_rt,
+					nil, nil, nil, nil,
+					{
+						{props.lighting_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- lighting/albedo
+						{props.glass_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- glass
+						{props.ssao_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- SSAO
+					},{
+					}
+				)
+			end)
+		end)
+
+		toolkit:bind_render_target(props.fisheye_aberration_rt, function()
+			toolkit:bind_material("FisheyeAberration", function()
+				toolkit:draw_render_target(
+					props.final_rt,
+					0, 0, nil, nil,
+					{
+						{props.final_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, 
+					},{
+					}    
+				)
+			end)
+		end)
+
+		toolkit:draw_render_target(
+			props.lighting_rt,
+			0, 0, nil, nil,
+			{
+				{props.fisheye_aberration_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, 
+			},{}    
+		)
+	end)
+end
+
+function final(self)
+	Core:unregister()
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

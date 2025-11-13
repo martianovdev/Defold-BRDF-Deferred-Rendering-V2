@@ -1,0 +1,46 @@
+[bootstrap]
+main_collection = /src/Main.collectionc
+render = /src/Render.renderc
+
+[script]
+shared_state = 1
+
+[android]
+input_method = HiddenInputField
+
+[html5]
+scale_mode = stretch
+show_fullscreen_button = 0
+show_made_with_defold = 0
+show_console_banner = 0
+transparent_graphics_context = 1
+heap_size = 512
+
+[project]
+title = Defold-BRDF-Deferred-Rendering-V2
+developer = martianov https://t.me/martianov
+
+[native_extension]
+app_manifest = /app.appmanifest
+
+[liveupdate]
+mount_on_start = 1
+
+[graphics]
+texture_profiles = /app.texture_profiles
+verify_graphics_calls = 0
+opengl_core_profile_hint = 1
+
+[display]
+width = 1920
+height = 1080
+high_dpi = 1
+
+[mesh]
+max_count = 256
+
+[physics]
+type = 3D
+use_fixed_timestep = 1
+max_fixed_timesteps = 1
+
