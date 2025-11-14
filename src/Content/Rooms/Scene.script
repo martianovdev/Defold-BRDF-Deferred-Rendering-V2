@@ -1,6 +1,6 @@
 local CollectionStore = require("src.Modules.CollectionStore.CollectionStore")
 local Core = require("src.Modules.Core.Core")
-local SSAOUtils = require("src.Modules.Render.Backend.Modules.SSAOUtils")
+--local SSAOUtils = require("src.Modules.Render.Backend.Modules.SSAOUtils")
 
 
 function init(self)
@@ -55,9 +55,9 @@ function init(self)
 				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(0, 0, 0, 1.0)}
 			}),
 
-			ssao_rt = toolkit:create_render_target(512, 512, {
-				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(1, 1, 1, 1.0)}, -- SSAO output (white = no occlusion)
-			}),
+			--ssao_rt = toolkit:create_render_target(512, 512, {
+			--	{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_RGBA, clear_color = vmath.vector4(1, 1, 1, 1.0)}, -- SSAO output (white = no occlusion)
+			--}),
 
 			light_shadowmap_rt = toolkit:create_render_target(2000, 2000, {
 				{buffer_type = graphics.BUFFER_TYPE_COLOR0_BIT, format = graphics.TEXTURE_FORMAT_R16F, clear_color = vmath.vector4(0, 0, 0, 1.0)}, -- Store depth into RGBA texture
@@ -73,7 +73,7 @@ function init(self)
 			props.tiled_lighting_rt:resize(render_width/10, render_height/10)
 			props.lighting_rt:resize(render_width, render_height)
 			props.glass_rt:resize(render_width, render_height)
-			props.ssao_rt:resize(render_width/1.5, render_height/1.5)
+			--props.ssao_rt:resize(render_width/1.5, render_height/1.5)
 			
 			props.final_rt:resize(render_width, render_height)
 
@@ -121,24 +121,24 @@ function init(self)
 		end)
 
 		-- SSAO Pass: Compute ambient occlusion from GBuffer
-		toolkit:bind_render_target(props.ssao_rt, function()
-			toolkit:bind_material("SSAO", function()
-				toolkit:draw_render_target(
-					props.gbuffer_rt,
-					nil, nil, nil, nil,
-					{
-						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR1_BIT}, -- normals
-						{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR2_BIT}, -- depth
-					},{
-						-- Camera matrices
-						mtx_camera_mvp = camera.projection * camera.view,
-						mtx_camera_projection = camera.projection,
-						mtx_camera_projection_inv = vmath.inv(camera.projection),
-						mtx_camera_view = camera.view,
-					}
-				)
-			end)
-		end)
+		--toolkit:bind_render_target(props.ssao_rt, function()
+		--	toolkit:bind_material("SSAO", function()
+		--		toolkit:draw_render_target(
+		--			props.gbuffer_rt,
+		--			nil, nil, nil, nil,
+		--			{
+		--				{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR1_BIT}, -- normals
+		--				{props.gbuffer_rt, graphics.BUFFER_TYPE_COLOR2_BIT}, -- depth
+		--			},{
+		--				-- Camera matrices
+		--				mtx_camera_mvp = camera.projection * camera.view,
+		--				mtx_camera_projection = camera.projection,
+		--				mtx_camera_projection_inv = vmath.inv(camera.projection),
+		--				mtx_camera_view = camera.view,
+		--			}
+		--		)
+		--	end)
+		--end)
 
 		toolkit:bind_render_target(props.tiled_lighting_rt, function()
 			toolkit:bind_material("TiledLighting", function()
@@ -230,7 +230,7 @@ function init(self)
 					{
 						{props.lighting_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- lighting/albedo
 						{props.glass_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- glass
-						{props.ssao_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- SSAO
+						--{props.ssao_rt, graphics.BUFFER_TYPE_COLOR0_BIT}, -- SSAO
 					},{
 					}
 				)
