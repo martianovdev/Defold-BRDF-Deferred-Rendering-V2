@@ -68,17 +68,34 @@ function init(self)
 	end, function(toolkit, world, props, render_width, render_height)
 		local camera = world:get_camera(props.camera_tag)
 	
-		if(render_width ~= props.gbuffer_rt.width or render_height ~= props.gbuffer_rt.height) then
-			props.gbuffer_rt:resize(render_width, render_height)
-			props.tiled_lighting_rt:resize(render_width/10, render_height/10)
-			props.lighting_rt:resize(render_width, render_height)
-			props.glass_rt:resize(render_width, render_height)
-			--props.ssao_rt:resize(render_width/1.5, render_height/1.5)
+		-- Limit maximum render resolution to 2K (2560x1440)
+		local MAX_RENDER_WIDTH = 2560
+		local MAX_RENDER_HEIGHT = 1440
+		
+		
+		-- Calculate scale factor if resolution exceeds FHD
+		local scale = 1.0
+		if render_width > MAX_RENDER_WIDTH or render_height > MAX_RENDER_HEIGHT then
+			local scale_x = MAX_RENDER_WIDTH / render_width
+			local scale_y = MAX_RENDER_HEIGHT / render_height
+			scale = math.min(scale_x, scale_y) -- Use the smaller scale to fit within bounds
+		end
+		
+		-- Apply scale to get clamped render dimensions
+		local clamped_render_width = math.floor(render_width * scale)
+		local clamped_render_height = math.floor(render_height * scale)
+	
+		if(clamped_render_width ~= props.gbuffer_rt.width or clamped_render_height ~= props.gbuffer_rt.height) then
+			props.gbuffer_rt:resize(clamped_render_width, clamped_render_height)
+			props.tiled_lighting_rt:resize(clamped_render_width/10, clamped_render_height/10)
+			props.lighting_rt:resize(clamped_render_width, clamped_render_height)
+			props.glass_rt:resize(clamped_render_width, clamped_render_height)
+			--props.ssao_rt:resize(clamped_render_width/1.5, clamped_render_height/1.5)
 			
-			props.final_rt:resize(render_width, render_height)
+			props.final_rt:resize(clamped_render_width, clamped_render_height)
 
-			props.combine_rt:resize(render_width, render_height)
-			props.fisheye_aberration_rt:resize(render_width, render_height)
+			props.combine_rt:resize(clamped_render_width, clamped_render_height)
+			props.fisheye_aberration_rt:resize(clamped_render_width, clamped_render_height)
 		end
 
 		local light_transform_array = 	world.light_source_flat_arrays.transform_array
