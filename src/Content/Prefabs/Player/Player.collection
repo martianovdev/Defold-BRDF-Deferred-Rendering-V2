@@ -11,6 +11,7 @@ instances {
   prototype: "/src/Modules/Render/Scene/Nodes/SpotLight.go"
   position {
     x: 0.2
+    y: -0.3
   }
   component_properties {
     id: "Light"

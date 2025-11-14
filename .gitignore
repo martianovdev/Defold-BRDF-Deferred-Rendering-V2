@@ -1,0 +1,5 @@
+.editor_settings
+/.internal
+/build
+.DS_Store
+Thumbs.db
