@@ -4,6 +4,13 @@
 
 Deferred rendering pipeline with PBR materials and post-processing effects for Defold Engine.
 
+## Updates
+
+### v2.01
+1. Fixed flashlight position
+2. Removed SSAO (it was too poor quality and GPU-intensive)
+3. Reduced texture resolution to 512px
+
 ## Rendering Effects
 
 ### Deferred Pipeline
@@ -12,8 +19,7 @@ Deferred rendering pipeline with PBR materials and post-processing effects for D
 - **TiledLighting** — lighting optimization through tile-based light culling
 - **LightingPass** — main lighting pass with shadows (EEVEE-like lighting)
 - **VolumetricLighting** — volumetric light scattering (atmospheric light rays)
-- **SSAO** — Screen-Space Ambient Occlusion (dual-radius algorithm)
-- **CombinePass** — final composition (lighting + glass + SSAO)
+- **CombinePass** — final composition (lighting + glass)
 
 ### Post-Processing
 - **FisheyeAberration** — fisheye distortion + chromatic aberration
@@ -79,7 +85,7 @@ The rendering pipeline is implemented in **level scripts** rather than centraliz
 - **Level Script** (e.g., `Scene.script`):
   - Registers a world with `Core:world()`
   - Defines the complete rendering pipeline in `update_callback`:
-    - GBuffer pass → SSAO → TiledLighting → LightingPass → Glass → Combine → Post-processing
+    - GBuffer pass → TiledLighting → LightingPass → Glass → Combine → Post-processing
   - Each level can customize its pipeline, effects, and light configuration
 
 **Benefits:**
