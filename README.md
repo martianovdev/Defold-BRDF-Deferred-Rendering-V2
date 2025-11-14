@@ -4,6 +4,8 @@
 
 Deferred rendering pipeline with PBR materials and post-processing effects for Defold Engine.
 
+**Note**: This project has been tested only on Defold 1.11.0.
+
 ## Updates
 
 ### v2.01
