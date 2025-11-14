@@ -10,6 +10,7 @@ Deferred rendering pipeline with PBR materials and post-processing effects for D
 1. Fixed flashlight position
 2. Removed SSAO (it was too poor quality and GPU-intensive)
 3. Reduced texture resolution to 512px
+4. Limited maximum render resolution to 2K (2560×1440)
 
 ## Rendering Effects
 
